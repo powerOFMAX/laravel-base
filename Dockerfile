@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.3.24-fpm-stretch
 
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
@@ -10,6 +10,7 @@ WORKDIR /var/www
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
+    libzip-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
